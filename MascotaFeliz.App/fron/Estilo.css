@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgba(15, 92, 122, 0.459);
+    background-image: url("fondo.png"); 
+   
+
+}
+.fotoveterinario {
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+   top:25px;
+   
+
+    margin: 20px auto;
+    border-radius:  20px;
+    box-shadow: 5px 8px 12px  black;
+    
+}
+
+.fotoveterinario img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.fotoveterinario p{
+ font-size: 25px; 
+ font-size: 2rem;
+ color: rgba(47, 11, 146, 0.897) ;
+ position: absolute;
+ top: 64%;
+ left: 30%;
+ transform: translate(-40%,50% );
+ text-shadow: 0 10px 10px rgba(68, 5, 5, 0.8);
+ font-family: 'Forte';
+
+}
+
+.form-registro {
+    width: 400px;
+    background-color:rgba(15, 92, 122, 0.459);
+    padding: 30px;
+    margin:  auto;
+    border-radius:  20px;
+    font-family: "impact";
+    color: rgb(67, 66, 71);
+  
+
+   
+   
+}
+
+.form-registro h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+
+}
+
+.controls {
+    width: 100%;
+    background-color: rgb(26, 26, 110);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #d8d8e6;
+    font-family: 'calibri';
+    color: white;
+    font-size: 18px;
+
+}
+
+.form-registro p {
+    height: 20px;
+    text-align: center;
+    font-size: 15px;
+
+
+}
+
+.form-registro a {
+    color: whitesmoke;
+    text-decoration: none;
+    
+}
+
+
+.form-registro a:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+    
+}
+
+.form-registro .boton {
+    width: 100%;
+    background-color: rgb(71, 69, 240);
+    
+    padding: 10px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+      <!--tablas -->
+        <table>
+                <tr>
+                        <th>PRODUCTO</th>  <!--con th quedan centrados  -->
+                            <th>PRECIO</th>
+
+                </tr>
+                <tr>
+                        <td> mause</td> <!--con td quedan alineados a la izquierda   -->
+                        <td> $20.000</td>
+                </tr>
+                <tr>
+                    <td> tablet samsung</td>
+                    <td> $400.000</td>
+            </tr>
+
+
+        </table>
+
+        <!--tablas con marco -->
+        <table style="border: 1px solid black;">
+            <tr>
+                    <th>PRODUCTO</th>  <!--con th quedan centrados  -->
+                        <th>PRECIO</th>
+
+            </tr>
+            <tr>
+                    <td> mause</td> <!--con td quedan alineados a la izquierda   -->
+                    <td> $20.000</td>
+            </tr>
+            <tr>
+                <td> tablet samsung</td>
+                <td> $400.000</td>
+        </tr>
+
+
+    </table>
+
+
+    <!--etiquetas de titulo y subtitulos  -->
+    <h1>mi primer titulo</h1>
+    <h2>mi seg titulo</h2>
+    <hr>
+    <h2>mi trece titulo</h2>
+    <!--etiqueta de parrafo -->
+    <p> hola mundo </p>
+    <!--comentarios dentro del codigo -->
+    <p> es un texto <span style="color:blue">demasiado largo</span> realizado
+        en una estiqueta de span
+        <!--saltos de linea -->
+    <p> es un texto <span style="color:brown">demasiado largo</span> realizado
+        en una<br><br><br> estiqueta de span <br><br>
+        <!--etiqueta de hipervinculo para navegar a otra pagina
+    web o para navegar en nuestra propia pagina-->
+        <!--este me carga en la misma pagina la direccion a la que quiero entrar -->
+        pagina que carga en la misma ventana <a href="https://www.google.com"> Ir a Google</a><br><br>
+        <!--para que me cargue en otra ventana  -->
+        pagina que carga en otra ventana<a target="_blank" href="https://www.google.com"> Ir a Google</a><br><br>
+        <!--subir una imagen pero sle muy grande   -->
+        <!--img src="imagen4.png" /-->
+        <!--subir una imagen pero sle muy grande se puede redimensionar    -->
+        <img src="imagen4.png" width="300" />
+
+    </p>
+    <!-- formulario label nombrar el  input
+    el name es el identificador como se llama el dato en un codigo  -->
+    <form>
+        <label for="nombre">Nombre </label>
+        <input id="nombre" name="nombre" />
+
+
+    </form>
+
+    <!-- place holder el tipo de dato que debemos ciolocar en el label : ingrese el dato-->
+    <form>
+
+        <label for="nombre">Nombre </label>
+        <input id="nombre" name="nombre" placeholder="ingrese el dato" />
+
+
+    </form>
+    <!-- place holder el tipo de dato que debemos colocar en el label : ingrese el dato-->
+    <form>
+
+        <label for="nombre">Nombre </label>
+        <input type="text" id="nombre" name="nombre" placeholder="ingrese el dato" /><br><br>
+
+
+    </form>
+    <!-- crear un cajon de comentarios -->
+    <textarea id="comentario " placeholder="ingrese comentario " name="comentario"></textarea><br><br>
+
+    <!-- modificar el tamaño de la caja de texto rows largo cols ancho-->
+    <textarea cols="50 " rows="10" id="comentario " placeholder="ingrese comentario "
+        name="comentario"></textarea><br><br>
+
+
+    <!-- modificar el tamaño de la caja de texto rows largo cols ancho y agrgar un label para identificar el cajon-->
+    <label for="comentario ">COMENTARIO </label><br>
+    <textarea cols="50 " rows="10" id="comentario " placeholder="ingrese comentario " name="comentario"></textarea><br><br>
+
+<hr>
+    <form action="/formulario" method="post">
+        <label for="nombre">Nombre </label>
+        <input id="nombre" name="nombre" placeholder="ingrese el dato" /><br><br>
+
+        <label for="apellido">Apellido </label>
+        <input id="apellido" name="apellido" placeholder="ingrese el dato" /><br><br>
+
+        <label for="comentario ">COMENTARIO </label><br>
+        <textarea cols="25 " rows="5" id="comentario " placeholder="ingrese comentario "
+            name="comentario"></textarea><br>
+
+
+        <!-- crear un boton para guardar la informacion en de los input y del cajon
+        indicando a donde direcciona la informacion  -->
+        
+        <!-- botones ersonalizados -->
+        <input type="submit" /> <!-- con este tipobboton no podemos agrgar etiquetas al boton -->
+        <button type="button"> Enviar</button>  
+        <button type="reset"> Enviar</button> 
+        <button type="submit"> Enviar</button> <br><br><br>
+    </form>
+    <hr>
+    <!-- botones ersonalizados incluir una imagen al boton-->
+    <button><img src="imagen4.png" width="100" >Enviar</button><br><br><br>
+    <hr>
+    <!-- listas no ordenada y salen con viñeta un punto -->
+    
+    <ul>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+
+
+    </ul><br><br>
+<hr>
+    <!-- listas ordenada  y salen con viñeta enumerada  -->
+    
+    <ol>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+
+
+    </ol><br><br>
+    <hr>
+    <!-- listas ordenada  y especificando el numero de inicio en la viñeta   -->
+    
+    <ol>
+        <li value="50">elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+
+
+    </ol><br><br>
+
+    <hr>
+    <!-- listas ordenada  y anidadas   -->
+    
+    <ol>
+        <li value="50">elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+        <li>
+            <ol>
+                <li> sub elemento 1</li>
+                <li> sub elemento 2</li>
+                <li> sub elemento 3</li>
+            </ol>
+
+
+        </li>
+
+    </ol><br><br>
+    <hr>
+    <!-- listas ordenada  y anidadas y cambio de numeros a letras    -->
+    
+    <ol>
+        <li value="50">elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+        <li>
+            <ol>
+                <li style="list-style-type: lower-alpha;"> sub elemento 1</li>
+                <li style="list-style-type: lower-greek;"> sub elemento 2</li>
+                <li style="list-style-type: lower-roman;"> sub elemento 3</li>
+            </ol>
+
+
+        </li>
+
+    </ol><br><br>
+</body>
+
+</html>
