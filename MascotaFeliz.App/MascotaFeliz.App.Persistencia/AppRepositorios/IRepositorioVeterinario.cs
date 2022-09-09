@@ -10,7 +10,7 @@ namespace MascotaFeliz.App.Persistencia
     {
         IEnumerable<Veterinario> GetAllVeterinarios();
         Veterinario AddVeterinario(Veterinario veterinario);
-        Dueno UpdateVeterinario(Veterinario veterinario);
+        Veterinario UpdateVeterinario(Veterinario veterinario);
         void DeleteVeterinario(int idVeterinario);
         Veterinario GetVeterinario(int idVeterinario);
         IEnumerable<Veterinario> GetVeterinarioPorFiltro(string filtro);
