@@ -19,26 +19,27 @@
                 <td>
                     <form action =# method= "post" enctype = "text/plain"></form>
                     <section class="form-registro"> 
-                        <h4> Digite el Nombre , id de la Mascota o Propietario</h4>
+                        <h4> Consulta de Mascotas</h4>
                         <input class="controls" type="text" name="IdMascota" id="IdMascota" placeholder="Id Mascota:">
-                        <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombre Mascota:">
-                        <input class="controls" type="text" name="nombres" id="nombres" placeholder=" Nombre Propietario:">
-                        <input class="controls" type="text" name="Apellido" id="apellidos" placeholder="Apellido Propietario:">
+                        <input class="controls" type="text" name="nombreMascota" id="nombreMascota" placeholder="Nombre Mascota:">
+                        <input class="controls" type="text" name="nombreDueno" id="nombreDueno" placeholder=" Nombre Dueño:">
+                        <input class="controls" type="text" name="nombeVeterinario" id="nombeVeterinario" placeholder="Nombre Veterinario:">
                        
-                        <button class="boton" type="submit"> Registrar</button>
-                        <button class="boton" name="Detalles">Detalles</button><br>
-                        <button class="boton" name="Actualizar">Actualizar</button><br>
-                        <button class="boton" name="Borrar">Borrar</button><br>
+                        <button class="boton" type="submit">Consultar</button>
+                        
                         
                     </section>
 
                     <td>
                         <table class="tabla">
                             <tr>
+                              <th>ID</th>
                               <th>Nombre</th>
-                              <th>Raza</th>
                               <th>Color</th>
+                              <th>Especie</th>
+                              <th>Raza</th>
                               <th>Propietario</th>
+                              <th>Veterinario</th>
                             </tr>
                             <tr>
                               <td>Max</td>
