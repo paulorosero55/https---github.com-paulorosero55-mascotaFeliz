@@ -1,0 +1,37 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditVeterinarioModel
+@{
+    int veterinarioId = Model.veterinario.Id;
+}
+<h2>Edicion de datos del Veterinario</h2>
+<form method="post">
+    <input type="hidden" asp-for="veterinario.Id"/>
+    <div class="form-group">
+        <label asp-for="veterinario.Nombres"></label>
+        <input asp-for="veterinario.Nombres" class= "form-control">
+        <span class="text-danger" asp-validation-for="veterinario.Nombres"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="veterinario.Apellidos"></label>
+        <input asp-for="veterinario.Apellidos" class= "form-control">
+        <span class="text-danger" asp-validation-for="veterinario.Apellidos"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="veterinario.Direccion"></label>
+        <input asp-for="veterinario.Direccion" class= "form-control">
+        <span class="text-danger" asp-validation-for="veterinario.Direccion"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="veterinario.Telefono"></label>
+        <input asp-for="veterinario.Telefono" class= "form-control">
+        <span class="text-danger" asp-validation-for="veterinario.Telefono"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="veterinario.TarjetaProfesional"></label>
+        <input asp-for="veterinario.TarjetaProfesional" class= "form-control">
+        <span class="text-danger" asp-validation-for="veterinario.TarjetaProfesional"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
+<a asp-page="./ListaVeterinarios" class="btn-default">Volver a la lista de Veterinarios</a>
