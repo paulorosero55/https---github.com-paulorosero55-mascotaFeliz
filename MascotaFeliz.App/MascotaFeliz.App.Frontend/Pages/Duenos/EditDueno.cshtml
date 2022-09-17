@@ -1,4 +1,37 @@
 ﻿@page
 @model MascotaFeliz.App.Frontend.Pages.EditDuenoModel
 @{
+    int duenoId = Model.dueno.Id;
 }
+<h2>Edicion de datos del propitario</h2>
+<form method="post">
+    <input type="hidden" asp-for="dueno.Id"/>
+    <div class="form-group">
+        <label asp-for="dueno.Nombres"></label>
+        <input asp-for="dueno.Nombres" class= "form-control">
+        <span class="text-danger" asp-validation-for="dueno.Nombres"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="dueno.Apellidos"></label>
+        <input asp-for="dueno.Apellidos" class= "form-control">
+        <span class="text-danger" asp-validation-for="dueno.Apellidos"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="dueno.Direccion"></label>
+        <input asp-for="dueno.Direccion" class= "form-control">
+        <span class="text-danger" asp-validation-for="dueno.Direccion"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="dueno.Telefono"></label>
+        <input asp-for="dueno.Telefono" class= "form-control">
+        <span class="text-danger" asp-validation-for="dueno.Telefono"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="dueno.Correo"></label>
+        <input asp-for="dueno.Correo" class= "form-control">
+        <span class="text-danger" asp-validation-for="dueno.Correo"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
+<a asp-page="./ListaDuenos" class="btn-default">Volver a la lista de Propietarios</a>

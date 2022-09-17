@@ -2,3 +2,36 @@
 @model MascotaFeliz.App.Presentacion.Pages.ListaDuenosModel
 @{
 }
+<h1>Lista de Dueños de Mascotas</h1>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Acciones</th>
+    </tr>
+    @foreach (var dueno in Model.duenos)
+    {
+        <tr>
+            <td>@dueno.Id</td>
+            <td>@dueno.Nombres</td>
+            <td>@dueno.Apellidos</td>
+            <td>@dueno.Direccion</td>
+            <td>@dueno.Telefono</td>
+            <td>@dueno.Correo</td>
+            <td>
+                <a class="btn btn-primary table-btn" asp-page="./DetallesDueno" asp-route-duenoId="@dueno.Id">
+                    <i class="fas fa-info-circle fa-lg">Detalle</i>
+                </a>
+                <a class="btn btn-primary table-btn" asp-page="./EditDueno" asp-route-duenoId="@dueno.Id">
+                    <i class="fas fa-addess-book fa-lg" aria-hidden="true">Editar</i>
+                </a>
+                
+            </td>
+        </tr>
+    }
+</table>
+<a asp-page="./EditDueno" class = "btn btn-primary"> Adiconar Nuevo Propietario</a>
