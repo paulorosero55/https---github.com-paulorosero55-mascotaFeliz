@@ -88,3 +88,6 @@ C:\Repos\https---github.com-paulorosero55-mascotaFeliz\MascotaFeliz.App\MascotaF
 C:\Repos\https---github.com-paulorosero55-mascotaFeliz\MascotaFeliz.App\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\DetalleVeterinario.cshtml.g.cs
 C:\Repos\https---github.com-paulorosero55-mascotaFeliz\MascotaFeliz.App\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\EditVeterinario.cshtml.g.cs
 C:\Repos\https---github.com-paulorosero55-mascotaFeliz\MascotaFeliz.App\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\ListaVeterinarios.cshtml.g.cs
+C:\Repos\https---github.com-paulorosero55-mascotaFeliz\MascotaFeliz.App\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\DetallesMascota.cshtml.g.cs
+C:\Repos\https---github.com-paulorosero55-mascotaFeliz\MascotaFeliz.App\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\EditMascota.cshtml.g.cs
+C:\Repos\https---github.com-paulorosero55-mascotaFeliz\MascotaFeliz.App\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\ListaMascotas.cshtml.g.cs

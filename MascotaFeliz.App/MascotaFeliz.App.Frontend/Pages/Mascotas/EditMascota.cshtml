@@ -1,0 +1,43 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditMascotaModel
+@{
+    int mascotaId = Model.mascota.Id;
+    int duenoId = Model.mascota.dueno;
+}
+<h2>Edicion de datos del propitario</h2>
+<form method="post">
+    <input type="hidden" asp-for="mascota.Id"/>
+    <div class="form-group">
+        <label asp-for="mascota.Nombre"></label>
+        <input asp-for="mascota.Nombre" class= "form-control">
+        <span class="text-danger" asp-validation-for="mascota.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="mascota.Color"></label>
+        <input asp-for="mascota.Color" class= "form-control">
+        <span class="text-danger" asp-validation-for="mascota.Color"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="mascota.Especie"></label>
+        <input asp-for="mascota.Especie" class= "form-control">
+        <span class="text-danger" asp-validation-for="mascota.Especie"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="mascota.Raza"></label>
+        <input asp-for="mascota.Raza" class= "form-control">
+        <span class="text-danger" asp-validation-for="mascota.Raza"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="mascota.Dueno"></label>
+        <input asp-for="mascota.Dueno" class= "form-control">
+        <span class="text-danger" asp-validation-for="mascota.Dueno"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="mascota.Veterinario"></label>
+        <input asp-for="mascota.Veterinario" class= "form-control">
+        <span class="text-danger" asp-validation-for="mascota.Veterinario"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
+<a asp-page="./ListaMascotas" class="btn-default">Volver a la lista de Mascotas</a>
