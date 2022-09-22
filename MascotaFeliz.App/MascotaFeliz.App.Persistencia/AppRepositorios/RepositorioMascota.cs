@@ -41,7 +41,7 @@ namespace MascotaFeliz.App.Persistencia
 
        public IEnumerable<Mascota> GetAllMascotas()
         {
-            return GetAllMascotas_();
+            return _appContext.Mascotas.Include("Dueno");
         }
 
         public IEnumerable<Mascota> GetMascotaPorFiltro(string filtro)
@@ -57,14 +57,24 @@ namespace MascotaFeliz.App.Persistencia
             return mascotas;
         }
 
-        public IEnumerable<Mascota> GetAllMascotas_()
+        public IEnumerable<Mascota> GetMascotasPorDueno(int idDueno)
         {
-            return _appContext.Mascotas;
+            var mascotas = GetAllMascotas(); // Obtiene todos los saludos
+            if (mascotas != null)  //Si se tienen saludos
+            {
+                if (idDueno>0) // Si el filtro tiene algun valor
+                {
+                    mascotas = mascotas.Where(m => m.Dueno.Id == idDueno);
+                }
+            }
+            return mascotas;
         }
+       
 
         public Mascota GetMascota(int idMascota)
         {
-            return _appContext.Mascotas.FirstOrDefault(d => d.Id == idMascota);
+        
+            return _appContext.Mascotas.Include(a=> a.Dueno).FirstOrDefault(d => d.Id == idMascota);
         }
 
         public Mascota UpdateMascota(Mascota mascota)
@@ -79,6 +89,21 @@ namespace MascotaFeliz.App.Persistencia
                 _appContext.SaveChanges();
             }
             return mascotaEncontrado;
-        }     
+        }
+        public Dueno AsignarDueno(int idMascota, int idDueno)
+        {
+            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(p => p.Id == idMascota);
+            if (mascotaEncontrado != null)
+            {
+                var duenoEncontrado = _appContext.Duenos.FirstOrDefault(m => m.Id == idDueno);
+                if (duenoEncontrado != null)
+                {
+                    mascotaEncontrado.Dueno = duenoEncontrado;
+                    _appContext.SaveChanges();
+                }
+                return duenoEncontrado;
+            }
+            return null;
+        }      
     }
-}
+}   

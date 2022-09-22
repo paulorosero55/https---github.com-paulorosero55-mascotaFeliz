@@ -3,7 +3,7 @@
 @{
     int duenoId = Model.dueno.Id;
 }
-<h2>Edicion de datos del propitario</h2>
+<h2>Edicion de datos del propitario @Model.dueno.Nombres @Model.dueno.Apellidos</h2>
 <form method="post">
     <input type="hidden" asp-for="dueno.Id"/>
     <div class="form-group">
@@ -32,6 +32,9 @@
         <span class="text-danger" asp-validation-for="dueno.Correo"></span>
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
-
+    <a class="btn btn-primary table-btn" asp-page="../Mascotas/EditMascota" asp-route-duenoId="@duenoId">
+        <i class="fas fa-addess-book fa-lg" aria-hidden="true">Asignar Mascota</i>
+    </a>
 </form>
+
 <a asp-page="./ListaDuenos" class="btn-default">Volver a la lista de Propietarios</a>

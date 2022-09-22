@@ -12,6 +12,7 @@ namespace MascotaFeliz.App.Persistencia
         /// Referencia al contexto de Dueno
         /// </summary>
         private readonly AppContext _appContext;
+    //    private readonly IRepositorioMascota _repoMascota;
         /// <summary>
         /// Metodo Constructor Utiiza 
         /// Inyeccion de dependencias para indicar el contexto a utilizar
@@ -80,6 +81,17 @@ namespace MascotaFeliz.App.Persistencia
                 _appContext.SaveChanges();
             }
             return duenoEncontrado;
-        }     
+        }  
+     /*   public IEnumerable<Mascota> GetMascotasPorDueno(int idDueno)
+        {
+            var mascotas = _repoMascota.GetAllMascotas(); 
+            if(mascotas!=null)
+            {
+                if(idDueno>0){
+                    mascotas = _appContext.Mascotas.Where(m => m.Dueno.Id == idDueno);
+                }
+            }
+            return mascotas;
+        }*/
     }
 }

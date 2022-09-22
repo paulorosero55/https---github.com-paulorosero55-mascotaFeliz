@@ -18,20 +18,20 @@ namespace MascotaFeliz.App.Consola
         {
             Console.WriteLine("Hello World!");
             //AddDueno();   
-            Console.WriteLine("----Bunsqueda de dueño por ID----");
-            BuscarDueno(1);
+           // Console.WriteLine("----Bunsqueda de dueño por ID----");
+           // BuscarDueno(1);
             //ListarDuenosFiltro();
-            Console.WriteLine("\n---Lista de todos los dueños---");
-            ListarDuenos();
+           // Console.WriteLine("\n---Lista de todos los dueños---");
+           // ListarDuenos();
 
            // AddVeterinario(); 
            //Console.WriteLine("\n---Bunsqueda de veterinario por ID---");
             //BuscarVeterinario(1);
             //ListarVeterinariosFiltro();
-            Console.WriteLine("\n---Lista de todos los veterinarios---");
-            ListarVeterinarios();
+           // Console.WriteLine("\n---Lista de todos los veterinarios---");
+           // ListarVeterinarios();
 
-
+            AsignarDueno();
 
             //AddMascota();
             Console.WriteLine("\nBunsqueda de mascota por ID");
@@ -116,6 +116,7 @@ namespace MascotaFeliz.App.Consola
                 Color = "Verde",
                 Especie = "Tortuga",
                 Raza = "No se",
+
                 
             };
             _repoMascota.AddMascota(mascota);
@@ -124,7 +125,10 @@ namespace MascotaFeliz.App.Consola
     private static void BuscarMascota(int idMascota) //consultar mascota
         {
             var mascota = _repoMascota.GetMascota(idMascota);
-            Console.WriteLine(mascota.Nombre+" "+mascota.Color+" "+mascota.Especie+" "+mascota.Raza+" ");
+            
+            Console.WriteLine(mascota.Nombre+" "+mascota.Color+" "+mascota.Especie+" "+mascota.Raza);
+            Console.WriteLine(mascota.Dueno.Id);
+            
         }
     
    private static void ListarMascotas() //listar mascotas
@@ -137,6 +141,14 @@ namespace MascotaFeliz.App.Consola
             }
 
         }
+        private static void AsignarDueno() //asignar Dueno
+        {
+            var dueno = _repoMascota.AsignarDueno(3,5);
+
+            Console.WriteLine(dueno.Nombres + " " +dueno.Apellidos+"  ");
+
+        }
     
     } 
+    
 }

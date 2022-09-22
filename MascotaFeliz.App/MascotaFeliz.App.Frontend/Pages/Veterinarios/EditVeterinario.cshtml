@@ -3,7 +3,7 @@
 @{
     int veterinarioId = Model.veterinario.Id;
 }
-<h2>Edicion de datos del Veterinario</h2>
+<h2>Edicion de datos del Veterinario @Model.veterinario.Nombres @Model.veterinario.Apellidos</h2>
 <form method="post">
     <input type="hidden" asp-for="veterinario.Id"/>
     <div class="form-group">

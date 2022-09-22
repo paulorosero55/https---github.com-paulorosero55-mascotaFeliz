@@ -2,12 +2,11 @@
 @model MascotaFeliz.App.Presentacion.Pages.ListaDuenosModel
 @{
 }
-<h1>Lista de Dueños de Mascotas</h1>
+<h1>Lista de Propietarios de Mascotas</h1>
 <table class="table">
     <tr>
         <th>ID</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
+        <th>Nombre</th>
         <th>Direccion</th>
         <th>Telefono</th>
         <th>Correo</th>
@@ -17,8 +16,7 @@
     {
         <tr>
             <td>@dueno.Id</td>
-            <td>@dueno.Nombres</td>
-            <td>@dueno.Apellidos</td>
+            <td>@dueno.Nombres @dueno.Apellidos</td>
             <td>@dueno.Direccion</td>
             <td>@dueno.Telefono</td>
             <td>@dueno.Correo</td>

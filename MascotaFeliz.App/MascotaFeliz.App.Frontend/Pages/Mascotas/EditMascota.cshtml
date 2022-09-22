@@ -4,9 +4,10 @@
     int mascotaId = Model.mascota.Id;
     
 }
-<h2>Edicion de datos del propitario</h2>
+<h2>Edicion de datos de la Mascota</h2>
 <form method="post">
     <input type="hidden" asp-for="mascota.Id"/>
+    <input type="hidden" asp-for="mascota.Dueno"/>
     <div class="form-group">
         <label asp-for="mascota.Nombre"></label>
         <input asp-for="mascota.Nombre" class= "form-control">
@@ -28,14 +29,16 @@
         <span class="text-danger" asp-validation-for="mascota.Raza"></span>
     </div>
     <div class="form-group">
-        <label asp-for="mascota.Dueno.Nombres"></label>
-        <input asp-for="mascota.Dueno.Nombres" class= "form-control">
-        <span class="text-danger" asp-validation-for="mascota.Dueno.Nombres"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="mascota.Veterinario.Nombres"></label>
-        <input asp-for="mascota.Veterinario.Nombres" class= "form-control">
-        <span class="text-danger" asp-validation-for="mascota.Veterinario.Nombres"></span>
+        <label for="veterinario">Veterinario</label>
+        <select class= "form-control" id="veterinario" asp-for="mascota.Veterinario.Id" name="veterinarioId">
+            <option value="0">--Seleccione el veterinario--</option>
+            @foreach (var veterinario in Model.Veterinarios){
+                <option value=@veterinario.Id>@veterinario.Nombres @veterinario.Apellidos</option>
+            }
+
+        </select>
+        
+        <span class="text-danger" asp-validation-for="mascota.Raza"></span>
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
 
