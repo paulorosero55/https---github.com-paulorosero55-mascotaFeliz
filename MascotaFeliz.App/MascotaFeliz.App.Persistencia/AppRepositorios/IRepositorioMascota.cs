@@ -16,5 +16,6 @@ namespace MascotaFeliz.App.Persistencia
         IEnumerable<Mascota> GetMascotaPorFiltro(string filtro);
         IEnumerable<Mascota> GetMascotasPorDueno(int idDueno);
         Dueno AsignarDueno(int idMascota, int idDueno);
+        Veterinario AsignarVeterinario(int idMascota, int idVeterinario);
     }
 }

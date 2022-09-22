@@ -41,7 +41,7 @@ namespace MascotaFeliz.App.Persistencia
 
        public IEnumerable<Mascota> GetAllMascotas()
         {
-            return _appContext.Mascotas.Include("Dueno");
+            return _appContext.Mascotas.Include("Dueno").Include("Veterinario");
         }
 
         public IEnumerable<Mascota> GetMascotaPorFiltro(string filtro)
@@ -104,6 +104,21 @@ namespace MascotaFeliz.App.Persistencia
                 return duenoEncontrado;
             }
             return null;
-        }      
+        }   
+        public Veterinario AsignarVeterinario(int idMascota, int idVeterinario)
+        {
+            var mascotaEncontrada = _appContext.Mascotas.FirstOrDefault(p => p.Id == idMascota);
+            if (mascotaEncontrada != null)
+            {
+                var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(m => m.Id == idVeterinario);
+                if (veterinarioEncontrado != null)
+                {
+                    mascotaEncontrada.Veterinario = veterinarioEncontrado;
+                    _appContext.SaveChanges();
+                }
+                return veterinarioEncontrado;
+            }
+            return null;
+        }        
     }
 }   

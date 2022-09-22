@@ -17,7 +17,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         public IEnumerable<Mascota> mascotas {get; set;}
         [BindProperty(SupportsGet = true)]
         public Dueno Dueno {get; set;}
-
+        public Veterinario Veterinario {get; set;}
         public ListaMascotasModel()
         {
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
@@ -26,6 +26,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         public void OnGet(Mascota mascota)
         {
             mascota.Dueno = Dueno;
+            mascota.Veterinario = Veterinario;
             mascotas = _repoMascota.GetAllMascotas();
             
         }

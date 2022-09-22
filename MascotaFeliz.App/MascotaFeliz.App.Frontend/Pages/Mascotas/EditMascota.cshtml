@@ -2,6 +2,7 @@
 @model MascotaFeliz.App.Frontend.Pages.EditMascotaModel
 @{
     int mascotaId = Model.mascota.Id;
+
     
 }
 <h2>Edicion de datos de la Mascota</h2>
@@ -29,18 +30,16 @@
         <span class="text-danger" asp-validation-for="mascota.Raza"></span>
     </div>
     <div class="form-group">
-        <label for="veterinario">Veterinario</label>
-        <select class= "form-control" id="veterinario" asp-for="mascota.Veterinario.Id" name="veterinarioId">
-            <option value="0">--Seleccione el veterinario--</option>
-            @foreach (var veterinario in Model.Veterinarios){
-                <option value=@veterinario.Id>@veterinario.Nombres @veterinario.Apellidos</option>
+        <label asp-for="mascota.Veterinario.Id">Veterinario</label>
+        <select name="veterinarioId" id="veterinario" asp-for="mascota.Veterinario.Id" class= "form-control" aria-label="Default select example">
+            <option value="0">Seleccione una opcion</option> 
+            @foreach (var veterinario in Model.listaVeterinarios){
+                <option value="@veterinario.Id">@veterinario.Id @veterinario.Nombres @veterinario.Apellidos</option>
             }
-
         </select>
-        
-        <span class="text-danger" asp-validation-for="mascota.Raza"></span>
+        <span class="text-danger" asp-validation-for="mascota.Veterinario.Id"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+     <button type="submit" class="btn btn-primary">Guardar</button>
 
 </form>
 <a asp-page="./ListaMascotas" class="btn-default">Volver a la lista de Mascotas</a>

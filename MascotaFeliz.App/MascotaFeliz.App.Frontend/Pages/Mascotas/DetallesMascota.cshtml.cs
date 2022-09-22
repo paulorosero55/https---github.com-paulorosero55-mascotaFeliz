@@ -13,6 +13,7 @@ namespace MascotaFeliz.App.Frontend.Pages
     {
         private readonly IRepositorioMascota _repoMascota;
         public Mascota mascota {get; set; }
+        
         public DetallesMascotaModel(){
             this._repoMascota = new RepositorioMascota(new MascotaFeliz.App.Persistencia.AppContext());
         }
