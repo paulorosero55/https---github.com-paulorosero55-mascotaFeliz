@@ -51,12 +51,12 @@ namespace MascotaFeliz.App.Persistencia
             return _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
         }
 
-      /*  public Historia GetHistoriaMascota(int idMascota)
+        public Historia GetHistoriaMascota(int idMascota)
         {
-           // var mascota = _appContext.Mascotas.FirstOrDefault(d => d.Id == idMascota);
-            
-            return _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
-        }*/
+            var mascota = _appContext.Mascotas.Where(m => m.Id == idMascota).Include("Historia").FirstOrDefault();
+            return mascota.Historia;
+           // return _appContext .Historias.Where(h => h.Id == mascota.Historia.Id);
+        }
 
         public Historia UpdateHistoria(Historia historia)
         {

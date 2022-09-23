@@ -18,6 +18,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         [BindProperty(SupportsGet = true)]
         public Dueno Dueno {get; set;}
         public Veterinario Veterinario {get; set;}
+        
         public ListaMascotasModel()
         {
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());

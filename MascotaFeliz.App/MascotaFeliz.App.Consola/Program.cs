@@ -11,7 +11,7 @@ namespace MascotaFeliz.App.Consola
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
-
+        private static IRepositorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
 
 
         static void Main(string[] args)
@@ -31,8 +31,10 @@ namespace MascotaFeliz.App.Consola
            // Console.WriteLine("\n---Lista de todos los veterinarios---");
            // ListarVeterinarios();
 
-            AsignarDueno();
-
+            //AddHistoria();
+            //Console.WriteLine("fecha actual "+DateTime.Now);
+            AsignarHistoria();
+            BuscarHistoriaMascota(1);
             //AddMascota();
             Console.WriteLine("\nBunsqueda de mascota por ID");
             BuscarMascota(1);
@@ -121,6 +123,20 @@ namespace MascotaFeliz.App.Consola
             };
             _repoMascota.AddMascota(mascota);
         }
+        private static void AddHistoria()
+        {
+            var historia = new Historia
+            {
+                
+                FechaInicial = DateTime.Now,
+
+                
+            };
+            
+            _repoHistoria.AddHistoria(historia);
+            Console.WriteLine("el id de historia es "+historia.Id);
+        }
+
 
     private static void BuscarMascota(int idMascota) //consultar mascota
         {
@@ -131,6 +147,22 @@ namespace MascotaFeliz.App.Consola
             
         }
     
+    private static void BuscarHistoriaMascota(int idMascota) //consultar mascota
+        {
+            var historia = _repoHistoria.GetHistoriaMascota(idMascota);
+            
+                //Console.WriteLine("no tiene historia");
+          //  Console.WriteLine("nombre mascota "+mascota.Historia);
+            if(historia ==null)
+                Console.WriteLine("no tiene historia");
+            else
+            {
+              Console.WriteLine("Si tiene historia");  
+            }
+            
+            
+        }
+   
    private static void ListarMascotas() //listar mascotas
         {
             var mascotas = _repoMascota.GetAllMascotas();
@@ -146,6 +178,13 @@ namespace MascotaFeliz.App.Consola
             var dueno = _repoMascota.AsignarDueno(3,5);
 
             Console.WriteLine(dueno.Nombres + " " +dueno.Apellidos+"  ");
+
+        }
+        private static void AsignarHistoria() //asignar Dueno
+        {
+            var historia = _repoMascota.AsignarHistoria(1003,8);
+
+            Console.WriteLine("Historia asignada "+historia.Id);
 
         }
     

@@ -41,7 +41,7 @@ namespace MascotaFeliz.App.Persistencia
 
        public IEnumerable<Mascota> GetAllMascotas()
         {
-            return _appContext.Mascotas.Include("Dueno").Include("Veterinario");
+            return _appContext.Mascotas.Include("Dueno").Include("Veterinario").Include("Historia");
         }
 
         public IEnumerable<Mascota> GetMascotaPorFiltro(string filtro)
@@ -70,13 +70,11 @@ namespace MascotaFeliz.App.Persistencia
             return mascotas;
         }
        
-
         public Mascota GetMascota(int idMascota)
         {
-        
-            return _appContext.Mascotas.Include(a=> a.Dueno).FirstOrDefault(d => d.Id == idMascota);
+            return _appContext.Mascotas.Include("Dueno").Include("Veterinario").Include("Historia").FirstOrDefault(d => d.Id == idMascota);
         }
-
+        
         public Mascota UpdateMascota(Mascota mascota)
         {
             var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(d => d.Id == mascota.Id);
@@ -117,6 +115,21 @@ namespace MascotaFeliz.App.Persistencia
                     _appContext.SaveChanges();
                 }
                 return veterinarioEncontrado;
+            }
+            return null;
+        }
+        public Historia AsignarHistoria(int idMascota, int idHistoria)
+        {
+            var mascotaEncontrada = _appContext.Mascotas.FirstOrDefault(p => p.Id == idMascota);
+            if (mascotaEncontrada != null)
+            {
+                var historiaEncontrado = _appContext.Historias.FirstOrDefault(m => m.Id == idHistoria);
+                if (historiaEncontrado != null)
+                {
+                    mascotaEncontrada.Historia = historiaEncontrado;
+                    _appContext.SaveChanges();
+                }
+                return historiaEncontrado;
             }
             return null;
         }        

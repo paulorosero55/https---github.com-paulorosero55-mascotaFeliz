@@ -13,7 +13,7 @@ namespace MascotaFeliz.App.Persistencia
         Historia UpdateHistoria(Historia historia);
         void DeleteHistoria(int idHistoria);
         Historia GetHistoria(int idHistoria);
-    //    Historia GetHistoriaMascota(int idMascota);
+        Historia GetHistoriaMascota(int idMascota);
         VisitaPyP AsignarVisitaPyP(int idHistoria, int idVisitaPyP); 
     
        

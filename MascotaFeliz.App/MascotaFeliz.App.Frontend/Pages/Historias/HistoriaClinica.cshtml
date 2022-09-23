@@ -1,0 +1,10 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.HistoriaClinicaModel
+@{
+    int mascotaId = Model.mascota.Id;
+}
+<h1>Historia clinica de la mascota @Model.mascota.Nombre</h1>
+
+<a class="btn btn-primary table-btn" asp-page="../Visitas/VisitaPyP" asp-route-historiaId="@Model.mascota.Historia.Id">
+    <i class="fas fa-addess-book fa-lg" aria-hidden="true">Asignar Visita </i>
+</a>

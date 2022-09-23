@@ -13,11 +13,14 @@ namespace MascotaFeliz.App.Frontend.Pages
     {
         private readonly IRepositorioMascota _repoMascota;
         public static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        public static IRepositorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
+
         [BindProperty]
 
         public Mascota mascota {get; set;}
         public Dueno dueno {get; set;}
         public Veterinario veterinario {get; set;}
+        public Historia historia {get; set;}
         public IEnumerable<Veterinario> listaVeterinarios {get; set;}
 
         
@@ -49,9 +52,16 @@ namespace MascotaFeliz.App.Frontend.Pages
                 mascota = _repoMascota.UpdateMascota(mascota);
                 // RedirectToPage("./ListaMascotas");
             }else{
+                historia = new Historia
+                {
+                    FechaInicial = DateTime.Now,
+                };
+
                 _repoMascota.AddMascota(mascota); 
                 _repoMascota.AsignarDueno(mascota.Id,duenoId);
                 _repoMascota.AsignarVeterinario(mascota.Id,veterinarioId);
+                _repoHistoria.AddHistoria(historia);
+                _repoMascota.AsignarHistoria(mascota.Id, historia.Id);
                 return RedirectToPage("./ListaMascotas");
             }
             return Page();
