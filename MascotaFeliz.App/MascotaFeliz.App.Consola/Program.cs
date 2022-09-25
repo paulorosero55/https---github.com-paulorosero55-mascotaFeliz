@@ -23,7 +23,7 @@ namespace MascotaFeliz.App.Consola
             //ListarDuenosFiltro();
            // Console.WriteLine("\n---Lista de todos los dueños---");
            // ListarDuenos();
-
+           AsignarVisita();
            // AddVeterinario(); 
            //Console.WriteLine("\n---Bunsqueda de veterinario por ID---");
             //BuscarVeterinario(1);
@@ -33,8 +33,8 @@ namespace MascotaFeliz.App.Consola
 
             //AddHistoria();
             //Console.WriteLine("fecha actual "+DateTime.Now);
-            AsignarHistoria();
-            BuscarHistoriaMascota(1);
+           // AsignarHistoria();
+          //  BuscarHistoriaMascota(1);
             //AddMascota();
             Console.WriteLine("\nBunsqueda de mascota por ID");
             BuscarMascota(1);
@@ -185,6 +185,13 @@ namespace MascotaFeliz.App.Consola
             var historia = _repoMascota.AsignarHistoria(1003,8);
 
             Console.WriteLine("Historia asignada "+historia.Id);
+
+        }
+        private static void AsignarVisita() //asignar Dueno
+        {
+            var historia = _repoHistoria.AsignarVisitaPyP(1,15);
+
+            Console.WriteLine("visita asignada a historia "+historia.Id);
 
         }
     

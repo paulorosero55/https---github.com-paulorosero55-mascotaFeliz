@@ -1,4 +1,61 @@
 ﻿@page
 @model MascotaFeliz.App.Frontend.Pages.VisitaPyPModel
 @{
+  
+ //   int mascotaId = Model.mascota.Id;
+    int historiaId = Model.historia.Id;
 }
+<h2>Datos de visita</h2>
+<form method="post">
+    <input type="hidden" asp-for="visita.Id"/>
+    <div class="form-group">
+        <label asp-for="visita.FechaVisita"></label>
+        <input asp-for="visita.FechaVisita" class= "form-control">
+        <span class="text-danger" asp-validation-for="visita.FechaVisita"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="visita.Temperatura"></label>
+        <input asp-for="visita.Temperatura" class= "form-control">
+        <span class="text-danger" asp-validation-for="visita.Temperatura"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="visita.Peso"></label>
+        <input asp-for="visita.Peso" class= "form-control">
+        <span class="text-danger" asp-validation-for="visita.Peso"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="visita.FrecuenciaRespiratoria"></label>
+        <input asp-for="visita.FrecuenciaRespiratoria" class= "form-control">
+        <span class="text-danger" asp-validation-for="visita.FrecuenciaRespiratoria"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="visita.FrecuenciaCardiaca"></label>
+        <input asp-for="visita.FrecuenciaCardiaca" class= "form-control">
+        <span class="text-danger" asp-validation-for="visita.FrecuenciaCardiaca"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="visita.EstadoAnimo"></label>
+        <input asp-for="visita.EstadoAnimo" class= "form-control">
+        <span class="text-danger" asp-validation-for="visita.EstadoAnimo"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="visita.IdVeterinario">Veterinario</label>
+        <select name="IdVeterinario" id="IdVeterinario" asp-for="visita.IdVeterinario" class= "form-control" aria-label="Default select example">
+            <option value="0">Seleccione una opcion</option> 
+            @foreach (var veterinario in Model.listaVeterinarios){
+                <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
+            }
+        </select>
+        <span class="text-danger" asp-validation-for="mascota.Veterinario.Id"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="visita.Recomendaciones"></label>
+        <input asp-for="visita.Recomendaciones" class= "form-control">
+        <span class="text-danger" asp-validation-for="visita.Recomendaciones"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
+<a class="btn btn-primary" asp-page="../Historias/HistoriaClinica" asp-route-historiaId="">
+    <i class="fas fa-addess-book fa-lg" aria-hidden="true">Volver a Historia Clinica</i>
+</a>

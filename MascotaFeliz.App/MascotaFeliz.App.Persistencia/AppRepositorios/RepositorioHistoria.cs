@@ -75,15 +75,19 @@ namespace MascotaFeliz.App.Persistencia
         public VisitaPyP AsignarVisitaPyP(int idHistoria, int idVisitaPyP)
         {
             var historiaEncontrado = _appContext.Historias.FirstOrDefault(p => p.Id == idHistoria);
+            
             if (historiaEncontrado != null)
             {
-                var visitaPyPEncontrado = _appContext.VisitasPyP.FirstOrDefault(m => m.Id == idVisitaPyP);
-                if (visitaPyPEncontrado != null)
-                {
-                    historiaEncontrado.VisitasPyP.Add(visitaPyPEncontrado);
+                var visita = _appContext.VisitasPyP.FirstOrDefault(m => m.Id == idVisitaPyP);
+                
+                 
+                if (visita != null)
+                {                    
+                    historiaEncontrado.VisitasPyP.Add(visita);
                     _appContext.SaveChanges();
                 }
-                return visitaPyPEncontrado;
+               
+                return visita;
             }
             return null;
         } 

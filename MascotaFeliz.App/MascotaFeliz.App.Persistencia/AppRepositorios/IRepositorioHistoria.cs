@@ -14,7 +14,7 @@ namespace MascotaFeliz.App.Persistencia
         void DeleteHistoria(int idHistoria);
         Historia GetHistoria(int idHistoria);
         Historia GetHistoriaMascota(int idMascota);
-        VisitaPyP AsignarVisitaPyP(int idHistoria, int idVisitaPyP); 
+        VisitaPyP AsignarVisitaPyP(int idHistoria, int VisitaPyP); 
     
        
     }

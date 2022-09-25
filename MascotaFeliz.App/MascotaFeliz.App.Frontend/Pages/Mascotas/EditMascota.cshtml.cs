@@ -47,6 +47,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                 return Page();
             }
             if(mascota.Id>0){
+                 listaVeterinarios = _repoVeterinario.GetAllVeterinarios();
                 _repoMascota.AsignarVeterinario(mascota.Id,veterinarioId);
 
                 mascota = _repoMascota.UpdateMascota(mascota);

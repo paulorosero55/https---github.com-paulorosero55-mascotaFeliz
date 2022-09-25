@@ -3,25 +3,29 @@
 @{
 }
 <h2>Datos de la Mascota</h2>
-<div>
-    ID Mascota: @Model.mascota.Id
-</div>
-<div>
-    Nombres: @Model.mascota.Nombre
-</div>
-<div>
-    Apellidos: @Model.mascota.Color
-</div>
-<div>
-    Direccion: @Model.mascota.Especie
-</div>
-<div>
-    Telefono: @Model.mascota.Raza
-</div>
-<div>
-    Dueño: @Model.mascota.Dueno.Nombres @Model.mascota.Dueno.Apellidos
-</div>
-<div>
-    Veterinario: @Model.mascota.Veterinario  @Model.mascota.Veterinario 
-</div>
+
+<table class="table">
+    <tr>
+        <td>ID Mascota:</td><td>@Model.mascota.Id</td>
+    </tr>
+    <tr>
+        <td>Nombre:</td><td>@Model.mascota.Nombre</td>
+    </tr>
+    <tr>
+        <td>Color:</td><td>@Model.mascota.Color</td>
+    </tr>
+    <tr>
+        <td>Especie:</td><td>@Model.mascota.Especie</td>
+    </tr>
+    <tr>
+        <td>Raza:</td><td>@Model.mascota.Raza</dd>
+    </tr>
+    <tr>
+        <td>Propietario:</td><td>@Model.mascota.Dueno.Nombres @Model.mascota.Dueno.Apellidos</td>
+    </tr>
+    <tr>
+        <td>Veterinaario:</td><td>@Model.mascota.Veterinario.Nombres @Model.mascota.Veterinario.Apellidos</td>
+    </tr>    
+</table>
+
 <a asp-page="./ListaMascotas" class="btn-default">Volver a la lista de Mascotas</a>

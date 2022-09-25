@@ -43,6 +43,10 @@ namespace MascotaFeliz.App.Persistencia
 
             return historia.VisitasPyP; 
         }
+        public VisitaPyP GetVisita(int idVisita)
+        {
+            return _appContext.VisitasPyP.Include("Historia").FirstOrDefault(v => v.Id == idVisita);
+        }
         public VisitaPyP UpdateVisita(VisitaPyP visita)
         {
             var visitaEncontrada = _appContext.VisitasPyP.FirstOrDefault(v => v.Id == visita.Id);

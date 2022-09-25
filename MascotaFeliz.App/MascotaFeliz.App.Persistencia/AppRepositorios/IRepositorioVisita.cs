@@ -12,6 +12,7 @@ namespace MascotaFeliz.App.Persistencia
         IEnumerable<VisitaPyP> GetAllVisitas();
         IEnumerable<VisitaPyP> GetVisitasPorHistoria(int idHistoria);
         VisitaPyP UpdateVisita(VisitaPyP visita);
+        VisitaPyP GetVisita(int idVisita);
 
     }
 }

@@ -14,7 +14,7 @@
         <th>Veterinario</th>
         <th align="center">Acciones</th>
     </tr>
-    @foreach (var mascota in Model.mascotas)
+    @foreach (var mascota in Model.listaMascotas)
     {
         
             
@@ -28,13 +28,13 @@
                 <td>@mascota.Veterinario.Nombres @mascota.Veterinario.Apellidos</td>
                 <td>
                     <a class="btn btn-primary table-btn" asp-page="./DetallesMascota" asp-route-mascotaId="@mascota.Id">
-                        <i class="fas fa-info-circle fa-lg">Detalle</i>
+                        <i class="fa-light fa-money-check-pen">Detalles</i>
                     </a>
                     <a class="btn btn-primary table-btn" asp-page="./EditMascota" asp-route-mascotaId="@mascota.Id">
-                        <i class="fas fa-addess-book fa-lg" aria-hidden="true">Editar</i>
+                        <i class="fa-light fa-money-check-pen">Editar</i>
                     </a>
                     <a class="btn btn-primary table-btn" asp-page="../Historias/HistoriaClinica" asp-route-mascotaId="@mascota.Id">
-                        <i class="fas fa-addess-book fa-lg" aria-hidden="true">Historia Clinica</i>
+                        <i class="fas fa-addess-book fa-lg" aria-hidden="true">Historia</i>
                     </a>
                 </td>
             </tr>

@@ -14,7 +14,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         private readonly IRepositorioMascota _repoMascota;
        
 
-        public IEnumerable<Mascota> mascotas {get; set;}
+        public IEnumerable<Mascota> listaMascotas {get; set;}
         [BindProperty(SupportsGet = true)]
         public Dueno Dueno {get; set;}
         public Veterinario Veterinario {get; set;}
@@ -28,7 +28,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         {
             mascota.Dueno = Dueno;
             mascota.Veterinario = Veterinario;
-            mascotas = _repoMascota.GetAllMascotas();
+            listaMascotas = _repoMascota.GetAllMascotas();
             
         }
     }
